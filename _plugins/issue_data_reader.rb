@@ -204,7 +204,7 @@ module Jekyll
           }
 
           if current_annex
-            if current_annex['position_on'] and ob_issue_meta['publication_date'] >= current_annex['position_on']
+            if current_annex['position_on'] and ob_issue_meta['publication_date'].to_date >= current_annex['position_on'].to_date
               current_annex['amendments'] ||= []
               current_annex['amendments'] << {
                 'amended_in_ob_issue' => ob_issue_id,
